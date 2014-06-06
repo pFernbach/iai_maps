@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<robot name="glasses">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="cash_register">
   
-  <macro name="glasses" params="name parent xyz rpy">
+  <macro name="cash_register" params="name parent xyz rpy">
     
-    <link name="${parent}_${name}_glasses_link">    
+    <link name="${parent}_${name}_register_link">    
       <visual>
         <geometry>
-          <mesh filename="package://iai_maps/Media/models/meshes/glasses.dae" scale="0.03 0.03 0.03" />
+          <mesh filename="package://iai_maps/Media/models/meshes/Cash_Register.dae" scale="0.03 0.03 0.03" />
         </geometry>		
         <origin rpy="0 0 0" xyz="0 0 0" />	
       </visual>
 
       <collision>
         <geometry>
-          <mesh filename="package://iai_maps/Media/models/meshes/glasses.dae" scale="0.03 0.03 0.03" />
+          <mesh filename="package://iai_maps/Media/models/meshes/Cash_Register.dae" scale="0.03 0.03 0.03" />
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0" />
       </collision>
@@ -24,10 +24,10 @@
       </inertial>
     </link>
     
-    <joint name="${parent}_${name}_glasses_joint" type="fixed">
+    <joint name="${parent}_${name}_register_joint" type="fixed">
       <origin xyz="${xyz}" rpy="${rpy}"/>
       <parent link="${parent}_link"/>
-      <child link="${parent}_${name}_glasses_link"/>
+      <child link="${parent}_${name}_register_link"/>
     </joint>
     
   </macro>

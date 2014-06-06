@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot name="worktables">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="worktables">
 
-  <xacro:include filename="$(find iai_maps)/defs/util_defs.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/table.xml"/>
-<!--  <xacro:include filename="$(find iai_maps)/Media/models/chair.urdf.xml"/>-->
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/table.xacro"/>
+<!--  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/chair.xacro"/>-->
 
   <link name="worktables_link">
     <sphere_inertia radius="0.001" mass="1"/>

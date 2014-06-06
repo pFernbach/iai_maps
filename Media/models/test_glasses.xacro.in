@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="test_glasses">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="test_glasses">
   
   <macro name="test_glasses" params="name parent xyz rpy">
     

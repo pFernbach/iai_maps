@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<robot name="room">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="room">
   
-  <xacro:include filename="$(find iai_maps)/defs/util_defs.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/cash_register.urdf.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/chair.urdf.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/cnc.urdf.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/test_glasses.urdf.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/glasses.urdf.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/wine_cooler.urdf.xml"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/cash_register.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/chair.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/cnc.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/test_glasses.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/glasses.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/wine_cooler.xacro"/>
   
   
   <!-- west wall -->
@@ -180,79 +180,18 @@
   <!--         -->
   
   
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/furniture_defs.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/island_block.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/oven_block.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/fridge_block.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/sink_block.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/shopping_block.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/table.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/small_table.xml"/>
-  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/cuboid.xml"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/furniture_defs.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/island_block.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/oven_block.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/fridge_block.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/sink_block.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/shopping_block.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/table.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/small_table.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/cuboid.xacro"/>
   
   
-  <!-- This is the top level joint /tf frame. -->
-  <link name="kitchen_link">
-    <sphere_inertia radius="0.001" mass="1"/>
-  </link>
-  
-  <!-- Shelves on top of kitchen counter -->
-  <counter parent="kitchen"
-  name="shelf_bottom"
-  pos_x="-5.22" pos_y="-5.65" pos_z="0.85"
-  roll="0" pitch="0" yaw="0"
-  size_x="0.25" size_y="0.38" size_z="0.025"
-  />
-  <counter parent="kitchen"
-  name="shelf_center"
-  pos_x="-5.22" pos_y="-5.65" pos_z="1.15"
-  roll="0" pitch="0" yaw="0"
-  size_x="0.21" size_y="0.38" size_z="0.025"
-  />
-  <counter parent="kitchen"
-  name="shelf_top"
-  pos_x="-5.22" pos_y="-5.65" pos_z="1.48"
-  roll="0" pitch="0" yaw="0"
-  size_x="0.25" size_y="0.38" size_z="0.025"
-  />
 
-  <!-- Finally, the 5 main blocks of the kitchen -->
-  <island_block block_pos="-1.50 -4.35 0" block_rpy="0 0 3.141"/>
-  
-  <oven_block block_pos="-5.22 -6.85 0" block_rpy="0 0 0"/>
-  
-  <sink_block block_pos="-5.01 -5.65 0" block_rpy="0 0 0"/>
-  
-  <fridge_block block_pos="-5.125 -3.59 0" block_rpy="0 0 0"/>
-  
-  
-  
-  
-  <shopping_block name="left_shopping_block" parent="kitchen" block_pos="3.8 -4.1 0" block_rpy="0 0 3.141"/>
-  <!---x 5 -y -2.5 -z 0.0 -R 0 -P 0.0 -Y 3.9265-->
-  <wine_cooler name="cooler" parent="kitchen" xyz="3.0 -5.5 0" rpy="0 0 3.9265"/>
-  
-  <shopping_block name="right_shopping_block" parent="kitchen" block_pos="2.2 -6.97 0" block_rpy="0 0 1.57"/>
-  
-  
-  <table name="cash1" parent="kitchen" block_pos="1.52 -5 0" block_rpy="0 0 1.57" material="KitchenWhite"/>
-  <small_table name="cash2" parent="kitchen" block_pos="0.9 -5 0" block_rpy="0 0 1.57" material="KitchenWhite"/>
-  
-  <cash_register name="cash" parent="kitchen" xyz="0.5 -4.4 0.73" rpy="0 0 3.1415"/>
-  
-  
-  
-  <table name="eating_table" parent="kitchen" block_pos="-1.7 -2.1 0" block_rpy="0 0 1.57" material="KitchenWhite"/>
-  <chair name="eating_1" parent="kitchen" xyz="-1.35 -1.2 0" rpy="0 0 1.57"/>
-  <chair name="eating_2" parent="kitchen" xyz="-1.35 -1.8 0" rpy="0 0 1.57"/>
-  <chair name="eating_3" parent="kitchen" xyz="-2.65 -0.75 0" rpy="0 0 -1.57"/>
-  <chair name="eating_4" parent="kitchen" xyz="-2.65 -1.35 0" rpy="0 0 -1.57"/>
-  
-  
-  <joint name="tempLink" type="fixed">
-    <parent link="room_link"/>
-    <child link="kitchen_link"/>
-  </joint>
               
   
   
@@ -260,62 +199,20 @@
   <!-- Worktables -->
   <!--            -->
   
- 
-  <table name="work1" parent="room" block_pos="-4.05 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
-  <table name="work2" parent="room" block_pos="-2.44 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
-  <table name="work3" parent="room" block_pos="-0.83 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
-  <table name="work4" parent="room" block_pos="0.77 -1.71 0" block_rpy="0 0 1.57" material="LightBrown2"/>
-
-  
-  <chair name="work1_1" parent="room" xyz="-2.75 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work1_2" parent="room" xyz="-3.35 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work2_1" parent="room" xyz="-1.14 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work2_2" parent="room" xyz="-1.74 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work3_1" parent="room" xyz="0.47 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work3_2" parent="room" xyz="-0.13 0.7 0" rpy="0 0 3.1415"/>
-  <chair name="work4_1" parent="room" xyz="0.93 -1.35 0" rpy="0 0 1.57"/>
-  <chair name="work4_2" parent="room" xyz="0.93 -0.7 0" rpy="0 0 1.57"/>
-  
   <!--             -->
   <!-- cnc bereich -->
   <!--             -->
-  
-  
-  <shopping_block name="cnc_shopping_block" parent="room" block_pos="1 5 0" block_rpy="0 0 -1.57"/>
-  <cnc name="cnc" parent="room" xyz="2.7 4 0" rpy="0 0 -1.57"/>
-  
+
   <!--            -->
   <!-- bio lab    -->
   <!--            -->
   
-  <table name="bio1" parent="room" block_pos="-1.48 4.2 0" block_rpy="0 0 0" material="KitchenWhite"/>
+<!--  <table name="bio1" parent="room" block_pos="-1.48 4.2 0" block_rpy="0 0 0" material="KitchenWhite"/>
   <table name="bio2" parent="room" block_pos="-3.1 4.2 0" block_rpy="0 0 0" material="KitchenWhite"/>
-  <table name="bio3" parent="room" block_pos="-4.72 4.2 0" block_rpy="0 0 0" material="KitchenWhite"/>
+  <table name="bio3" parent="room" block_pos="-4.72 4.2 0" block_rpy="0 0 0" material="KitchenWhite"/>-->
   
-  <test_glasses name="glasses1" parent="room" xyz="-2.1 4.5 0.73" rpy="0 0 1.57"/>
+<!--  <test_glasses name="glasses1" parent="room" xyz="-2.1 4.5 0.73" rpy="0 0 1.57"/>-->
   <glasses name="glasses2" parent="room" xyz="-1.1 4.3 0.73" rpy="0 0 0"/>
   
 </robot>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   

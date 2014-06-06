@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot name="room">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="room">
   
-  <xacro:include filename="$(find iai_maps)/defs/util_defs.xml"/>  
-  <xacro:include filename="$(find iai_maps)/room/lab_macros.xml"/>
-  <xacro:include filename="$(find iai_maps)/Media/models/glasses.urdf.xml"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>  
+  <xacro:include filename="@CMAKE_BINARY_DIR@/room/lab_macros.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/glasses.xacro"/>
 
   
 <!--  <glasses name="glasses2" parent="room" xyz="-1.1 4.3 0.73" rpy="0 0 0"/>-->

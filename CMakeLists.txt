@@ -15,6 +15,7 @@
 # <http://www.gnu.org/licenses/>.
 
 cmake_minimum_required(VERSION 2.6)
+include(cmake/portability.cmake)
 project(iai_maps)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -22,56 +23,88 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package()
 
-macro(generate_urdf input)
-  string(REPLACE ".urdf.xml" ".urdf" "output" "${input}")
-  execute_process(
-    COMMAND rosrun xacro xacro.py -o ${CMAKE_BINARY_DIR}/${output}
-    ${CMAKE_SOURCE_DIR}/${input})
-endmacro()
-
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/room)
-generate_urdf (room/kitchen_area.urdf.xml)
-
-INSTALL(FILES
-  defs/util_defs.xml
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/defs
+# build urdf files using xacro
+set(XACRO_FILES
+  defs/util_defs
+  defs/ias_kitchen/materials
+  defs/ias_kitchen/furniture_defs
+  defs/ias_kitchen/oven_block
+  defs/ias_kitchen/sink_block
+  defs/ias_kitchen/small_table
+  defs/ias_kitchen/fridge_block
+  defs/ias_kitchen/table
+  defs/ias_kitchen/cuboid
+  defs/ias_kitchen/shopping_block
+  defs/ias_kitchen/island_block
+  Media/models/glasses
+  Media/models/chair
+  Media/models/cnc
+  Media/models/cash_register
+  Media/models/wine_cooler
+  Media/models/test_glasses
+  room/test
+  room/colorTest
+  room/cnc_area
+  room/bio_area
+  room/worktables
+  room/allInOne
+  room/kitchen_area
+  room/lab_macros
+  room/room
+  room/shopping_area
   )
 
+foreach(it ${XACRO_FILES})
+  config_files(${it}.xacro)
+  get_filename_component(basepath ${it} PATH)
+  get_filename_component(basename ${it} NAME)
+  set (basepath ${CMAKE_BINARY_DIR}/${basepath})
+
+  message(" processing xacro file :${basepath}/${basename}.xacro")
+  set(expanded_file "${basepath}/${basename}.urdf")
+  message("  produce expanded file :"${expanded_file})
+  
+  execute_process(
+    COMMAND ${_xacro_py} -o ${expanded_file} ${basepath}/${basename}.xacro
+    )
+  set(URDF_FILES ${URDF_FILES} ${expanded_file})
+endforeach(it)
+
 INSTALL(FILES
-  defs/ias_kitchen/materials.xml
-  defs/ias_kitchen/furniture_defs.xml
-  defs/ias_kitchen/oven_block.xml
-  defs/ias_kitchen/sink_block.xml
-  defs/ias_kitchen/small_table.xml
-  defs/ias_kitchen/fridge_block.xml
-  defs/ias_kitchen/table.xml
-  defs/ias_kitchen/cuboid.xml
-  defs/ias_kitchen/shopping_block.xml
-  defs/ias_kitchen/island_block.xml
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/materials.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/furniture_defs.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/oven_block.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/sink_block.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/small_table.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/fridge_block.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/table.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/cuboid.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/shopping_block.urdf
+  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/island_block.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/defs/ias_kitchen
   )
 
 INSTALL(FILES
-  Media/models/glasses.urdf.xml
-  Media/models/chair.urdf.xml
-  Media/models/cnc.urdf.xml
-  Media/models/cash_register.urdf.xml
-  Media/models/wine_cooler.urdf.xml
-  Media/models/test_glasses.urdf.xml
+  ${CMAKE_BINARY_DIR}/Media/models/glasses.urdf
+  ${CMAKE_BINARY_DIR}/Media/models/chair.urdf
+  ${CMAKE_BINARY_DIR}/Media/models/cnc.urdf
+  ${CMAKE_BINARY_DIR}/Media/models/cash_register.urdf
+  ${CMAKE_BINARY_DIR}/Media/models/wine_cooler.urdf
+  ${CMAKE_BINARY_DIR}/Media/models/test_glasses.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/Media/models
   )
 
 INSTALL(FILES
-  room/test.urdf.xml
-  room/colorTest.urdf.xml
-  room/cnc_area.urdf.xml
-  room/bio_area.urdf.xml
-  room/worktables.urdf.xml
-  room/allInOne.urdf.xml
-  room/kitchen_area.urdf.xml
-  room/lab_macros.xml
-  room/room.urdf.xml
-  room/shopping_area.urdf.xml
+  ${CMAKE_BINARY_DIR}/room/test.urdf
+  ${CMAKE_BINARY_DIR}/room/colorTest.urdf
+  ${CMAKE_BINARY_DIR}/room/cnc_area.urdf
+  ${CMAKE_BINARY_DIR}/room/bio_area.urdf
+  ${CMAKE_BINARY_DIR}/room/worktables.urdf
+  ${CMAKE_BINARY_DIR}/room/allInOne.urdf
+  ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
+  ${CMAKE_BINARY_DIR}/room/lab_macros.urdf
+  ${CMAKE_BINARY_DIR}/room/room.urdf
+  ${CMAKE_BINARY_DIR}/room/shopping_area.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/room
   )
 
