@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot name="worktables">
-  
-  <include filename="$(find iai_maps)/defs/util_defs.xml"/> 
-  <include filename="$(find iai_maps)/defs/ias_kitchen/table.xml"/>
-<!--  <include filename="$(find iai_maps)/Media/models/chair.urdf.xml"/>-->
+
+  <xacro:include filename="$(find iai_maps)/defs/util_defs.xml"/>
+  <xacro:include filename="$(find iai_maps)/defs/ias_kitchen/table.xml"/>
+<!--  <xacro:include filename="$(find iai_maps)/Media/models/chair.urdf.xml"/>-->
 
   <link name="worktables_link">
     <sphere_inertia radius="0.001" mass="1"/>
   </link>
-  
+
   <table name="work_table_1" parent="worktables" block_pos="-4.05 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
   <table name="work_table_2" parent="worktables" block_pos="-2.44 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
   <table name="work_table_3" parent="worktables" block_pos="-0.83 -0.15 0" block_rpy="0 0 0" material="LightBrown2"/>
@@ -23,7 +23,7 @@
   <chair name="work_chair_3_2" parent="worktables" xyz="-0.13 0.7 0" rpy="0 0 3.1415"/>
   <chair name="work_chair_4_1" parent="worktables" xyz="0.93 -1.35 0" rpy="0 0 1.57"/>
   <chair name="work_chair_4_2" parent="worktables" xyz="0.93 -0.7 0" rpy="0 0 1.57"/>
-  
+
   -->
-  
+
 </robot>
