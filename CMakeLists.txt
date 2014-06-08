@@ -71,41 +71,8 @@ foreach(it ${XACRO_FILES})
 endforeach(it)
 
 INSTALL(FILES
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/materials.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/furniture_defs.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/oven_block.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/sink_block.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/small_table.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/fridge_block.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/table.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/cuboid.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/shopping_block.urdf
-  ${CMAKE_BINARY_DIR}/defs/ias_kitchen/island_block.urdf
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/defs/ias_kitchen
-  )
-
-INSTALL(FILES
-  ${CMAKE_BINARY_DIR}/Media/models/glasses.urdf
-  ${CMAKE_BINARY_DIR}/Media/models/chair.urdf
-  ${CMAKE_BINARY_DIR}/Media/models/cnc.urdf
-  ${CMAKE_BINARY_DIR}/Media/models/cash_register.urdf
-  ${CMAKE_BINARY_DIR}/Media/models/wine_cooler.urdf
-  ${CMAKE_BINARY_DIR}/Media/models/test_glasses.urdf
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/Media/models
-  )
-
-INSTALL(FILES
-  ${CMAKE_BINARY_DIR}/room/test.urdf
-  ${CMAKE_BINARY_DIR}/room/colorTest.urdf
-  ${CMAKE_BINARY_DIR}/room/cnc_area.urdf
-  ${CMAKE_BINARY_DIR}/room/bio_area.urdf
-  ${CMAKE_BINARY_DIR}/room/worktables.urdf
-  ${CMAKE_BINARY_DIR}/room/allInOne.urdf
   ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
-  ${CMAKE_BINARY_DIR}/room/lab_macros.urdf
-  ${CMAKE_BINARY_DIR}/room/room.urdf
-  ${CMAKE_BINARY_DIR}/room/shopping_area.urdf
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/room
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
 INSTALL(FILES
