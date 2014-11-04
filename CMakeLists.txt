@@ -54,6 +54,10 @@ set(XACRO_FILES
   room/shopping_area
   )
 
+SET(XACRO_SRDF_FILES
+  room/srdf/kitchen_area
+  )
+
 foreach(it ${XACRO_FILES})
   config_files(${it}.xacro)
   get_filename_component(basepath ${it} PATH)
@@ -70,9 +74,30 @@ foreach(it ${XACRO_FILES})
   set(URDF_FILES ${URDF_FILES} ${expanded_file})
 endforeach(it)
 
+foreach(it ${XACRO_SRDF_FILES})
+  config_files(${it}.xacro)
+  get_filename_component(basepath ${it} PATH)
+  get_filename_component(basename ${it} NAME)
+  set (basepath ${CMAKE_BINARY_DIR}/${basepath})
+
+  message(" processing xacro file :${basepath}/${basename}.xacro")
+  set(expanded_file "${basepath}/${basename}.srdf")
+  message("  produce expanded file :"${expanded_file})
+
+  execute_process(
+    COMMAND ${_xacro_py} -o ${expanded_file} ${basepath}/${basename}.xacro
+    )
+  set(SRDF_FILES ${SRDF_FILES} ${expanded_file})
+endforeach(it)
+
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+  )
+
+INSTALL(FILES
+  ${CMAKE_BINARY_DIR}/room/srdf/kitchen_area.srdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
 INSTALL(FILES

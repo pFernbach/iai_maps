@@ -447,6 +447,23 @@
     </gazebo>
   
   </macro>
+  <macro name="color_counter_srdf" params="name size_x size_y size_z">
+    <contact name="${name}">
+      <link name="${name}_link" object="${name}_link"/>
+      <!-- Box size: size_x * size_y * size_z
+              x             y            z     -->
+      <point>
+        ${+size_x/2}  ${+size_y/2}  ${size_z/2}
+        ${+size_x/2}  ${-size_y/2}  ${size_z/2}
+        ${-size_x/2}  ${+size_y/2}  ${size_z/2}
+        ${-size_x/2}  ${-size_y/2}  ${size_z/2}
+      </point>
+      <triangle>
+        0 1 2 1 3 2
+      </triangle>
+  </contact>
+
+  </macro>
 
   <!--                    -->
   <!-- Counter Side Macro -->

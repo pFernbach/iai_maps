@@ -155,4 +155,9 @@
 
   </macro>
 
+  <macro name="table_srdf" params="name">
+    <color_counter_srdf name="${name}_table_top"
+      size_x="1.600" size_y="0.600" size_z="0.025" />
+  </macro>
+
 </robot>
