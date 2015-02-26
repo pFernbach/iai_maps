@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="staircase">
+
+       
+       <xacro:include filename="@CMAKE_BINARY_DIR@/defs/ias_kitchen/furniture_defs.xacro"/>
+
+  <!--           -->
+  <!-- Staircase -->
+  <!--           -->
+
+  <macro name="staircase" params="name parent s_x s_y s_z material">
+
+    <color_counter parent="${parent}"
+      name="${name}_stair1"
+      pos_x="0" pos_y="0" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${s_z}"
+      material="${material}"
+    />
+
+    <color_counter parent="${parent}"
+      name="${name}_stair2"
+      pos_x="0" pos_y="${s_y}" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${2 * s_z}"
+      material="${material}"
+    />
+
+    <color_counter parent="${parent}"
+      name="${name}_stair3"
+      pos_x="0" pos_y="${2*s_y}" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${3 * s_z}"
+      material="${material}"
+    />
+
+  </macro>
+
+  <macro name="staircase_srdf" params="name parent s_x s_y s_z material">
+
+    <color_counter_srdf parent="${parent}"
+      name="${name}_stair1"
+      pos_x="0" pos_y="0" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${s_z}"
+      material="${material}"
+    />
+
+    <color_counter_srdf parent="${parent}"
+      name="${name}_stair2"
+      pos_x="0" pos_y="${s_y}" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${2 * s_z}"
+      material="${material}"
+    />
+
+    <color_counter_srdf parent="${parent}"
+      name="${name}_stair3"
+      pos_x="0" pos_y="${2*s_y}" pos_z="0"
+      roll="0" pitch="0" yaw="0"
+      size_x="${s_x}" size_y="${s_y}" size_z="${3 * s_z}"
+      material="${material}"
+    />
+
+  </macro>
+
+</robot>

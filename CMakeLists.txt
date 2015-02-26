@@ -36,6 +36,7 @@ set(XACRO_FILES
   defs/ias_kitchen/cuboid
   defs/ias_kitchen/shopping_block
   defs/ias_kitchen/island_block
+  defs/ias_kitchen/staircase
   Media/models/glasses
   Media/models/chair
   Media/models/cnc
@@ -52,10 +53,12 @@ set(XACRO_FILES
   room/lab_macros
   room/room
   room/shopping_area
+  room/staircase
   )
 
 SET(XACRO_SRDF_FILES
   room/srdf/kitchen_area
+  room/srdf/staircase
   )
 
 foreach(it ${XACRO_FILES})
@@ -97,6 +100,16 @@ INSTALL(FILES
 
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/kitchen_area.srdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
+  )
+
+INSTALL(FILES
+  ${CMAKE_BINARY_DIR}/room/staircase.urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+  )
+
+INSTALL(FILES
+  ${CMAKE_BINARY_DIR}/room/srdf/staircase.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
