@@ -37,22 +37,7 @@ set(XACRO_FILES
   defs/ias_kitchen/shopping_block
   defs/ias_kitchen/island_block
   defs/ias_kitchen/staircase
-  Media/models/glasses
-  Media/models/chair
-  Media/models/cnc
-  Media/models/cash_register
-  Media/models/wine_cooler
-  Media/models/test_glasses
-  room/test
-  room/colorTest
-  room/cnc_area
-  room/bio_area
-  room/worktables
-  room/allInOne
   room/kitchen_area
-  room/lab_macros
-  room/room
-  room/shopping_area
   room/staircase
   )
 
