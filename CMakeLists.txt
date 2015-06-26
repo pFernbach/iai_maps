@@ -42,34 +42,42 @@ set(XACRO_FILES
   Media/models/cash_register
   Media/models/wine_cooler
   Media/models/test_glasses
-#  room/test
-#  room/colorTest
-#  room/cnc_area
-#  room/bio_area
-#  room/worktables
-#  room/allInOne
-#  room/kitchen_area
-#  room/lab_macros
-#  room/shopping_area
+  room/test
+  room/colorTest
+  room/cnc_area
+  room/bio_area
+  room/worktables
+  room/allInOne
+  room/kitchen_area
+  room/lab_macros
+  room/shopping_area
 	room/tunnel
+	room/tunnelSmall
 	room/room
 	room/labyrinth
 	room/labyrinth2
+  room/grid
+  room/crack
+  room/hole
   )
 
 SET(XACRO_SRDF_FILES
   room/srdf/kitchen_area
-#	room/srdf/test
-#	room/srdf/shopping_area
-#	room/srdf/worktables
-#	room/srdf/lab_macros
-#	room/srdf/bio_area
-#	room/srdf/cnc_area
-#	room/srdf/allInOne
+	room/srdf/test
+	room/srdf/shopping_area
+	room/srdf/worktables
+	room/srdf/lab_macros
+	room/srdf/bio_area
+	room/srdf/cnc_area
+	room/srdf/allInOne
 	room/srdf/tunnel
 	room/srdf/room
 	room/srdf/labyrinth
 	room/srdf/labyrinth2
+	room/srdf/tunnelSmall
+  room/srdf/grid
+  room/srdf/crack
+  room/srdf/hole
   )
 
 foreach(it ${XACRO_FILES})
@@ -106,33 +114,43 @@ endforeach(it)
 
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
-#	${CMAKE_BINARY_DIR}/room/test.urdf
-#	${CMAKE_BINARY_DIR}/room/shopping_area.urdf
-#	${CMAKE_BINARY_DIR}/room/worktables.urdf
-#	${CMAKE_BINARY_DIR}/room/lab_macros.urdf
-#	${CMAKE_BINARY_DIR}/room/bio_area.urdf
-#	${CMAKE_BINARY_DIR}/room/cnc_area.urdf
-#	${CMAKE_BINARY_DIR}/room/allInOne.urdf
+	${CMAKE_BINARY_DIR}/room/test.urdf
+	${CMAKE_BINARY_DIR}/room/shopping_area.urdf
+	${CMAKE_BINARY_DIR}/room/worktables.urdf
+	${CMAKE_BINARY_DIR}/room/lab_macros.urdf
+	${CMAKE_BINARY_DIR}/room/bio_area.urdf
+	${CMAKE_BINARY_DIR}/room/cnc_area.urdf
+	${CMAKE_BINARY_DIR}/room/allInOne.urdf
+	${CMAKE_BINARY_DIR}/room/tunnelSmall.urdf
 	${CMAKE_BINARY_DIR}/room/tunnel.urdf
 	${CMAKE_BINARY_DIR}/room/room.urdf
 	${CMAKE_BINARY_DIR}/room/labyrinth.urdf
 	${CMAKE_BINARY_DIR}/room/labyrinth2.urdf
+	${CMAKE_BINARY_DIR}/room/backward_easy.urdf
+	${CMAKE_BINARY_DIR}/room/grid.urdf
+	${CMAKE_BINARY_DIR}/room/hole.urdf
+	${CMAKE_BINARY_DIR}/room/crack.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/kitchen_area.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/test.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/shopping_area.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/worktables.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/lab_macros.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/bio_area.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/cnc_area.srdf
-#	${CMAKE_BINARY_DIR}/room/srdf/allInOne.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/test.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/shopping_area.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/worktables.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/lab_macros.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/bio_area.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/cnc_area.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/allInOne.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/tunnel.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/tunnelSmall.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/room.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/labyrinth.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/labyrinth2.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/backward_easy.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/grid.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/hole.srdf
+	${CMAKE_BINARY_DIR}/room/srdf/crack.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
@@ -155,6 +173,15 @@ INSTALL(FILES
   Media/materials/textures/sink.png
   Media/materials/textures/mittig_neben_roboterplakat.png
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/Media/materials/textures
+)
+
+INSTALL(FILES
+  meshs/backward_easy.dae
+  meshs/backward_easy.stl
+  meshs/grid.stl
+  meshs/crack.stl
+  meshs/hole_big.stl
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshs
 )
 
 INSTALL(FILES
