@@ -12,14 +12,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package:///meshs/hole.stl"/>
+      <mesh filename="package:///meshs/hole_big.stl"/>
     </geometry>
     <material name="Grey"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-     <mesh filename="package://iai_maps/meshs/hole.stl"/>
+     <mesh filename="package://iai_maps/meshs/hole_big.stl"/>
     </geometry>
   </collision>
 </link>
