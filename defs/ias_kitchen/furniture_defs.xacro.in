@@ -449,7 +449,7 @@
   </macro>
   <macro name="color_counter_srdf" params="name size_x size_y size_z">
     <contact name="${name}">
-      <link name="${name}_link" object="${name}_link"/>
+      <link name="${name}_link" object="${name}_link_0"/>
       <!-- Box size: size_x * size_y * size_z
               x             y            z     -->
       <point>
