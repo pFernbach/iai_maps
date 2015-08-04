@@ -59,6 +59,8 @@ set(XACRO_FILES
   room/grid
   room/crack
   room/hole
+  room/engine_noCable
+  room/funnel
   )
 
 SET(XACRO_SRDF_FILES
@@ -78,6 +80,8 @@ SET(XACRO_SRDF_FILES
   room/srdf/grid
   room/srdf/crack
   room/srdf/hole
+  room/srdf/engine_noCable
+  room/srdf/funnel
   )
 
 foreach(it ${XACRO_FILES})
@@ -130,6 +134,8 @@ INSTALL(FILES
 	${CMAKE_BINARY_DIR}/room/grid.urdf
 	${CMAKE_BINARY_DIR}/room/hole.urdf
 	${CMAKE_BINARY_DIR}/room/crack.urdf
+  ${CMAKE_BINARY_DIR}/room/engine_noCable.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -151,6 +157,8 @@ INSTALL(FILES
 	${CMAKE_BINARY_DIR}/room/srdf/grid.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/hole.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/crack.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/engine_noCable.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
@@ -179,8 +187,11 @@ INSTALL(FILES
   meshs/backward_easy.dae
   meshs/backward_easy.stl
   meshs/grid.stl
+  meshs/grid_light.stl
   meshs/crack.stl
   meshs/hole_big.stl
+  meshs/35HP_ENGINE_noCable_easy.stl
+  meshs/cable_funnel_light.stl
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshs
 )
 
