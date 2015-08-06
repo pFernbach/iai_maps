@@ -61,6 +61,7 @@ set(XACRO_FILES
   room/hole
   room/engine_noCable
   room/funnel
+  room/powerplant
   )
 
 SET(XACRO_SRDF_FILES
@@ -82,6 +83,7 @@ SET(XACRO_SRDF_FILES
   room/srdf/hole
   room/srdf/engine_noCable
   room/srdf/funnel
+  room/srdf/powerplant
   )
 
 foreach(it ${XACRO_FILES})
@@ -136,6 +138,7 @@ INSTALL(FILES
 	${CMAKE_BINARY_DIR}/room/crack.urdf
   ${CMAKE_BINARY_DIR}/room/engine_noCable.urdf
   ${CMAKE_BINARY_DIR}/room/funnel.urdf
+  ${CMAKE_BINARY_DIR}/room/powerplant.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -159,6 +162,7 @@ INSTALL(FILES
 	${CMAKE_BINARY_DIR}/room/srdf/crack.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/engine_noCable.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/funnel.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/powerplant.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
@@ -192,6 +196,7 @@ INSTALL(FILES
   meshs/hole_big.stl
   meshs/35HP_ENGINE_noCable_easy.stl
   meshs/cable_funnel_light.stl
+  meshs/powerplant_simplification.stl
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshs
 )
 
