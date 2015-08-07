@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="funnel">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="powerplant_simplification">
   
   <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>  
   <xacro:include filename="@CMAKE_BINARY_DIR@/room/lab_macros.xacro"/>
@@ -8,18 +8,18 @@
   
 <!--  <glasses name="glasses2" parent="room" xyz="-1.1 4.3 0.73" rpy="0 0 0"/>-->
 
-<link name="funnel_link">
+<link name="powerplant_simplification_link">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package:///meshs/cable_funnel_light.stl"/>
+      <mesh filename="package:///meshs/powerplant_simplification.stl"/>
     </geometry>
-    <material name="Grey"><color rgba="0.7 0.7 0.7 1.0"/></material>
+       <material name="Grey"><color rgba="0.7 0.7 0.7 1.0"/></material>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-     <mesh filename="package://iai_maps/meshs/cable_funnel_light.stl"/>
+     <mesh filename="package://iai_maps/meshs/powerplant_simplification.stl"/>
     </geometry>
   </collision>
 </link>
