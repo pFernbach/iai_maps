@@ -44,9 +44,9 @@
   <oven_block block_pos="-5.27 -6.85 0" block_rpy="0 0 0"/>
   
   <sink_block block_pos="-5.29 -5.65 0" block_rpy="0 0 0"/>
-  
-  <fridge_block block_pos="-5.29 -3.59 0" block_rpy="0 0 0"/>
   -->
+  
+  <fridge_block_srdf block_pos="-5.29 -3.59 0" block_rpy="0 0 0"/>
 
   <table_srdf name="pancake_table" />
   
