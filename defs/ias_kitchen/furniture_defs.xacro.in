@@ -51,6 +51,19 @@
 
   </macro>
 
+  <!--                   -->
+  <!-- Handle SRDF Macro -->
+  <!--                   -->
+
+  <macro name="handle_srdf" params="parent name position clearance">
+
+    <axial_handle name="${parent}_${name}_handle" clearance="${clearance}">
+      <position>${position}</position>
+      <link name="${name}_link" />
+    </axial_handle>
+
+  </macro>
+
   <!--              -->
   <!-- Drawer Macro -->
   <!--              -->
@@ -236,6 +249,20 @@
       size_z="${handle_thickness}" />
   </macro>
 
+  <!--                   -->
+  <!-- Drawer SRDF Macro -->
+  <!--                   -->
+
+  <macro name="drawer_srdf" params="name">
+    
+    <handle_srdf
+      name="handle_${name}"
+      parent="${name}"
+      position="0 0 0 1 0 0 0"
+      clearance="${handle_thickness}" />
+
+  </macro>
+
   <!--                       -->
   <!-- Drawer Vertical Macro -->
   <!--                       -->
@@ -360,6 +387,21 @@
       size_x="${handle_thickness}"
       size_y="${handle_thickness}"
       size_z="${size_z - 2*handle_offset}"
+    />
+
+  </macro>
+
+
+  <!--                   -->
+  <!-- Fridge SRDF Macro -->
+  <!--                   -->
+
+  <macro name="fridge_srdf" params="name">
+    <handle_srdf
+      name="handle_${name}"
+      parent="${name}"
+      position="0 0 0 0 0 0 1"
+      clearance="${handle_thickness}"
     />
 
   </macro>
