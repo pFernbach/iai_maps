@@ -199,6 +199,10 @@ INSTALL(FILES
   meshs/crack.stl
   meshs/hole_big.stl
   meshs/35HP_ENGINE_noCable_easy.stl
+  meshs/35HP_ENGINE_noCable_easy.ply
+  meshs/35HP_ENGINE_noCable_easy.obj
+  meshs/35HP_ENGINE_noCable_easy_connected_parts.obj
+  meshs/35HP_ENGINE_noCable_easy_connected_parts.ply
   meshs/cable_funnel_light.stl
   meshs/powerplant_simplification.stl
   meshs/powerplant_noTop.stl
