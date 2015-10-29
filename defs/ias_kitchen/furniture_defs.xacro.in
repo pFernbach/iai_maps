@@ -500,9 +500,9 @@
         ${-size_x/2}  ${+size_y/2}  ${size_z/2}
         ${-size_x/2}  ${-size_y/2}  ${size_z/2}
       </point>
-      <triangle>
-        0 1 2 1 3 2
-      </triangle>
+      <shape>
+        4 0 1 3 2
+      </shape>
   </contact>
 
   </macro>
