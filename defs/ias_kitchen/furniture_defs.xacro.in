@@ -51,6 +51,19 @@
 
   </macro>
 
+  <!--                   -->
+  <!-- Handle SRDF Macro -->
+  <!--                   -->
+
+  <macro name="handle_srdf" params="parent name position clearance">
+
+    <axial_handle name="${parent}_${name}_handle" clearance="${clearance}">
+      <position>${position}</position>
+      <link name="${name}_link" />
+    </axial_handle>
+
+  </macro>
+
   <!--              -->
   <!-- Drawer Macro -->
   <!--              -->
@@ -236,6 +249,20 @@
       size_z="${handle_thickness}" />
   </macro>
 
+  <!--                   -->
+  <!-- Drawer SRDF Macro -->
+  <!--                   -->
+
+  <macro name="drawer_srdf" params="name">
+    
+    <handle_srdf
+      name="handle_${name}"
+      parent="${name}"
+      position="0 0 0 1 0 0 0"
+      clearance="${handle_thickness}" />
+
+  </macro>
+
   <!--                       -->
   <!-- Drawer Vertical Macro -->
   <!--                       -->
@@ -364,6 +391,21 @@
 
   </macro>
 
+
+  <!--                   -->
+  <!-- Fridge SRDF Macro -->
+  <!--                   -->
+
+  <macro name="fridge_srdf" params="name">
+    <handle_srdf
+      name="handle_${name}"
+      parent="${name}"
+      position="0 0 0 0 0 0 1"
+      clearance="${handle_thickness}"
+    />
+
+  </macro>
+
   <!--               -->
   <!-- Counter Macro -->
   <!--               -->
@@ -458,9 +500,9 @@
         ${-size_x/2}  ${+size_y/2}  ${size_z/2}
         ${-size_x/2}  ${-size_y/2}  ${size_z/2}
       </point>
-      <triangle>
-        0 1 2 1 3 2
-      </triangle>
+      <shape>
+        4 0 1 3 2
+      </shape>
   </contact>
 
   </macro>

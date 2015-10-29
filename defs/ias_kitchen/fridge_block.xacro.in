@@ -85,4 +85,17 @@
     
   </macro>
 
+  <!--                  -->
+  <!-- Fridge SRDF Area -->
+  <!--                  -->
+
+  <macro name="fridge_block_srdf" params="block_pos block_rpy">
+
+    <drawer_srdf name="drawer_fridge_bottom" />
+
+    <fridge_srdf name="fridge" />
+
+  </macro>
+
+
 </robot>
