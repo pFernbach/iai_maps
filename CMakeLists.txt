@@ -63,6 +63,7 @@ set(XACRO_FILES
   room/funnel
   room/powerplant
   room/powerplant_notop
+  room/abstract
   )
 
 SET(XACRO_SRDF_FILES
@@ -86,6 +87,7 @@ SET(XACRO_SRDF_FILES
   room/srdf/funnel
   room/srdf/powerplant
   room/srdf/powerplant_notop
+  room/srdf/abstract
   )
 
 foreach(it ${XACRO_FILES})
@@ -142,6 +144,7 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/funnel.urdf
   ${CMAKE_BINARY_DIR}/room/powerplant.urdf
   ${CMAKE_BINARY_DIR}/room/powerplant_notop.urdf
+  ${CMAKE_BINARY_DIR}/room/abstract.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -167,6 +170,7 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/funnel.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/powerplant.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/powerplant_notop.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/abstract.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
@@ -203,9 +207,13 @@ INSTALL(FILES
   meshs/35HP_ENGINE_noCable_easy.obj
   meshs/35HP_ENGINE_noCable_easy_connected_parts.obj
   meshs/35HP_ENGINE_noCable_easy_connected_parts.ply
+  meshs/35HP_ENGINE_noCable_easy_connected_parts.dae
   meshs/cable_funnel_light.stl
   meshs/powerplant_simplification.stl
   meshs/powerplant_noTop.stl
+  meshs/engine.obj
+  meshs/Abstract_cc.obj
+  meshs/Abstract.stl
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshs
 )
 
