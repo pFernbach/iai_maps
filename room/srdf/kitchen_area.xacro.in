@@ -42,15 +42,13 @@
   <island_block block_pos="-2.1 -4.94 0" block_rpy="0 0 3.141"/>
   
   <oven_block block_pos="-5.27 -6.85 0" block_rpy="0 0 0"/>
-  
-  <sink_block block_pos="-5.29 -5.65 0" block_rpy="0 0 0"/>
   -->
+  
+  <sink_block_srdf block_pos="-5.29 -5.65 0" block_rpy="0 0 0"/>
   
   <fridge_block_srdf block_pos="-5.29 -3.59 0" block_rpy="0 0 0"/>
 
   <table_srdf name="pancake_table" />
-  <color_counter_srdf name="white_counter_top_sink"
-		      size_x="0.58" size_y="2.06" size_z="0.025"/>
   
   <!--<table name="eating_table" parent="kitchen" block_pos="-1.7 -2.1 0" block_rpy="0 0 1.57" material="KitchenWhite"/>-->
     
