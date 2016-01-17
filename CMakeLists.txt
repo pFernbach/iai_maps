@@ -40,12 +40,14 @@ set(XACRO_FILES
   room/kitchen_area
   room/staircase
   room/floor_with_bar
+  room/table_with_pillar
   )
 
 SET(XACRO_SRDF_FILES
   room/srdf/kitchen_area
   room/srdf/staircase
   room/srdf/floor_with_bar
+  room/srdf/table_with_pillar
   )
 
 foreach(it ${XACRO_FILES})
@@ -84,6 +86,7 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
   ${CMAKE_BINARY_DIR}/room/staircase.urdf
   ${CMAKE_BINARY_DIR}/room/floor_with_bar.urdf
+  ${CMAKE_BINARY_DIR}/room/table_with_pillar.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -91,6 +94,7 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/kitchen_area.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/staircase.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/floor_with_bar.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/table_with_pillar.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
