@@ -133,48 +133,32 @@
     <color_counter_srdf
       name="white_counter_top_sink"
       size_x="0.58" size_y="2.06" size_z="0.002"
-    />
-  <!--parent="sink_block"-->
-  <!--pos_x="0" pos_y="0" pos_z="0.85"-->
-  <!--roll="0" pitch="0" yaw="0"-->
-  <!--material="KitchenWhite"-->
+      />
 
-  <!--<drawer parent="sink_block"-->
-    <!--name="drawer_sink_col1_bottom"-->
-    <!--pos_x="0" pos_y="0.03" pos_z="0.1"-->
-    <!--roll="0" pitch="0" yaw="0"-->
-    <!--size_x="0.58" size_y="0.8" size_z="0.29"-->
-<!--/>-->
-    <!--<drawer parent="sink_block"-->
-      <!--name="drawer_sink_col1_center"-->
-      <!--pos_x="0" pos_y="0.03" pos_z="0.39"-->
-      <!--roll="0" pitch="0" yaw="0"-->
-      <!--size_x="0.58" size_y="0.8" size_z="0.29"-->
-      <!--/>-->
-    <!--<drawer parent="sink_block"-->
-      <!--name="drawer_sink_col1_top"-->
-      <!--pos_x="0" pos_y="0.03" pos_z="0.68"-->
-      <!--roll="0" pitch="0" yaw="0"-->
-      <!--size_x="0.58" size_y="0.8" size_z="0.14"-->
-      <!--/>-->
-    <!--<drawer parent="sink_block"-->
-      <!--name="drawer_sink_col2"-->
-      <!--pos_x="0" pos_y="0.83" pos_z="0.1"-->
-      <!--roll="0" pitch="0" yaw="0"-->
-      <!--size_x="0.58" size_y="0.6" size_z="0.72"-->
-      <!--/>-->
-    <!--<drawer parent="sink_block"-->
-      <!--name="drawer_sink_col3_bottom"-->
-      <!--pos_x="0" pos_y="1.43" pos_z="0.1"-->
-      <!--roll="0" pitch="0" yaw="0"-->
-      <!--size_x="0.58" size_y="0.6" size_z="0.58"-->
-      <!--/>-->
-    <!--<drawer parent="sink_block"-->
-      <!--name="drawer_sink_col3_top"-->
-      <!--pos_x="0" pos_y="1.43" pos_z="0.68"-->
-      <!--roll="0" pitch="0" yaw="0"-->
-      <!--size_x="0.58" size_y="0.6" size_z="0.14"-->
-      <!--/>-->
+    <drawer_srdf
+      name="drawer_sink_col1_bottom"
+      size_x="0.58" size_y="0.8" size_z="0.29"
+      />
+    <drawer_srdf
+      name="drawer_sink_col1_center"
+      size_x="0.58" size_y="0.8" size_z="0.29"
+      />
+    <drawer_srdf
+      name="drawer_sink_col1_top"
+      size_x="0.58" size_y="0.8" size_z="0.14"
+      />
+    <drawer_srdf
+      name="drawer_sink_col2"
+      size_x="0.58" size_y="0.6" size_z="0.72"
+      />
+    <drawer_srdf
+      name="drawer_sink_col3_bottom"
+      size_x="0.58" size_y="0.6" size_z="0.58"
+      />
+    <drawer_srdf
+      name="drawer_sink_col3_top"
+      size_x="0.58" size_y="0.6" size_z="0.14"
+      />
 
   </macro>
 
