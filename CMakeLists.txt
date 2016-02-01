@@ -16,6 +16,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 include(cmake/portability.cmake)
+include(cmake/xacro.cmake)
 project(iai_maps)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -53,36 +54,14 @@ SET(XACRO_SRDF_FILES
   )
 
 foreach(it ${XACRO_FILES})
-  config_files(${it}.xacro)
-  get_filename_component(basepath ${it} PATH)
-  get_filename_component(basename ${it} NAME)
-  set (basepath ${CMAKE_BINARY_DIR}/${basepath})
-
-  message(" processing xacro file :${basepath}/${basename}.xacro")
-  set(expanded_file "${basepath}/${basename}.urdf")
-  message("  produce expanded file :"${expanded_file})
-  
-  execute_process(
-    COMMAND ${_xacro_py} -o ${expanded_file} ${basepath}/${basename}.xacro
-    )
-  set(URDF_FILES ${URDF_FILES} ${expanded_file})
+ GENERATE_URDF_FILE (${it} "urdf")
 endforeach(it)
 
 foreach(it ${XACRO_SRDF_FILES})
-  config_files(${it}.xacro)
-  get_filename_component(basepath ${it} PATH)
-  get_filename_component(basename ${it} NAME)
-  set (basepath ${CMAKE_BINARY_DIR}/${basepath})
-
-  message(" processing xacro file :${basepath}/${basename}.xacro")
-  set(expanded_file "${basepath}/${basename}.srdf")
-  message("  produce expanded file :"${expanded_file})
-
-  execute_process(
-    COMMAND ${_xacro_py} -o ${expanded_file} ${basepath}/${basename}.xacro
-    )
-  set(SRDF_FILES ${SRDF_FILES} ${expanded_file})
+  GENERATE_URDF_FILE(${it} "srdf")
 endforeach(it)
+
+ADD_CUSTOM_TARGET (generate_urdf_file ALL DEPENDS ${ALL_GENERATED_URDF})
 
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/kitchen_area.urdf
