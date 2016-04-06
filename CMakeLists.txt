@@ -19,8 +19,7 @@ include(cmake/portability.cmake)
 include(cmake/xacro.cmake)
 project(iai_maps)
 
-find_package(catkin REQUIRED COMPONENTS
-  xacro robot_state_chain_publisher geometry_msgs rostime sensor_msgs tf)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
