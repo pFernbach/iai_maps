@@ -1,7 +1,7 @@
 <launch>
 
   <param name="kitchen_description" 
-    textfile="$(find iai_maps)/room/kitchen_area.urdf"
+    textfile="$(find iai_maps)/urdf/kitchen_area.urdf"
   />  
   
   <node pkg="tf" type="static_transform_publisher" name="kitchen_link_broadcaster" 
