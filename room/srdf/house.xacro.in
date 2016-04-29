@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="house">
+  
+  <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>  
+  <xacro:include filename="@CMAKE_BINARY_DIR@/room/lab_macros.xacro"/>
+  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/glasses.xacro"/>
+
+  
+<!--  <glasses name="glasses2" parent="room" xyz="-1.1 4.3 0.73" rpy="0 0 0"/>-->
+    <xacro:property name="h1" value="2" />
+    <xacro:property name="eExt" value="0.2" />
+  
+  <link name="house_link">
+
+  </link>
+  
+    <!--salon -->
+
+    <wall name="wall_SA1" parent="house" xyz="4 10 ${h1/2}" sxyz="8 ${eExt} ${h1}" material="Gazebo/white"/>
+    <wall name="wall_SA2" parent="house" xyz="8 7.5 ${h1/2}" sxyz="0.1 5 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_SA3" parent="house" xyz="6.5 5 ${h1/2}" sxyz="3 1 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_SA4" parent="house" xyz="5 1 ${h1/2}" sxyz="0.1 2 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_SA5" parent="house" xyz="2.5 0 ${h1/2}" sxyz="5 ${eExt} ${h1}" material="Gazebo/white"/>
+    <wall name="wall_SA6" parent="house" xyz="0 5 ${h1/2}" sxyz="${eExt} 10 ${h1}" material="Gazebo/white"/>
+
+     <!--chambre1 -->
+
+    <wall name="wall_CA1" parent="house" xyz="10 10 ${h1/2}" sxyz="4 ${eExt} ${h1}" material="Gazebo/white"/>
+    <wall name="wall_CA2" parent="house" xyz="12 7.5 ${h1/2}" sxyz="${eExt} 5 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_CA3" parent="house" xyz="10 5 ${h1/2}" sxyz="4 0.1 ${h1}" material="Gazebo/white"/>
+
+     <!--entree -->
+
+    <wall name="wall_E1" parent="house" xyz="6.5 4 ${h1/2}" sxyz="3 0.1 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_E2" parent="house" xyz="8 3 ${h1/2}" sxyz="${eExt} 2 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_E3" parent="house" xyz="6.5 2 ${h1/2}" sxyz="3 0.1 ${h1}" material="Gazebo/white"/>
+
+     <!--wc -->
+    <wall name="wall_WC1" parent="house" xyz="8 1 ${h1/2}" sxyz="${eExt} 2 ${h1}" material="Gazebo/white"/>
+    <wall name="wall_WC1" parent="house" xyz="6.5 0 ${h1/2}" sxyz="3 ${eExt} ${h1}" material="Gazebo/white"/>
+
+
+</robot>
