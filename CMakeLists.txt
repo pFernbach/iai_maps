@@ -65,6 +65,16 @@ set(XACRO_FILES
   room/powerplant
   room/powerplant_notop
   room/abstract
+  room/funnel_r1_l1
+  room/funnel_r1_l2
+  room/funnel_r1_l4
+  room/funnel_r2_l1
+  room/funnel_r2_l2
+  room/funnel_r2_l4
+  room/funnel_r4_l1
+  room/funnel_r4_l2
+  room/funnel_r4_l4
+    room/house
   )
 
 SET(XACRO_SRDF_FILES
@@ -90,6 +100,16 @@ SET(XACRO_SRDF_FILES
   room/srdf/powerplant
   room/srdf/powerplant_notop
   room/srdf/abstract
+  room/srdf/funnel_r1_l1
+  room/srdf/funnel_r1_l2
+  room/srdf/funnel_r1_l4
+  room/srdf/funnel_r2_l1
+  room/srdf/funnel_r2_l2
+  room/srdf/funnel_r2_l4
+  room/srdf/funnel_r4_l1
+  room/srdf/funnel_r4_l2
+  room/srdf/funnel_r4_l4
+    room/srdf/house
   )
 
 foreach(it ${XACRO_FILES})
@@ -148,6 +168,17 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/powerplant.urdf
   ${CMAKE_BINARY_DIR}/room/powerplant_notop.urdf
   ${CMAKE_BINARY_DIR}/room/abstract.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r1_l1.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r1_l2.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r1_l4.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r2_l1.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r2_l2.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r2_l4.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r4_l1.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r4_l2.urdf
+  ${CMAKE_BINARY_DIR}/room/funnel_r4_l4.urdf
+  ${CMAKE_BINARY_DIR}/room/house.urdf
+
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -175,6 +206,16 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/powerplant.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/powerplant_notop.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/abstract.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r1_l1.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r1_l2.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r1_l4.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r2_l1.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r2_l2.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r2_l4.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r4_l1.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r4_l2.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/funnel_r4_l4.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/house.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
@@ -220,6 +261,15 @@ INSTALL(FILES
   meshs/engine.obj
   meshs/abstract.obj
   meshs/Abstract.stl
+  meshs/funnel_r1_l1.stl
+  meshs/funnel_r1_l2.stl
+  meshs/funnel_r1_l4.stl
+  meshs/funnel_r2_l1.stl
+  meshs/funnel_r2_l2.stl
+  meshs/funnel_r2_l4.stl
+  meshs/funnel_r4_l1.stl
+  meshs/funnel_r4_l2.stl
+  meshs/funnel_r4_l4.stl
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshs
 )
 
