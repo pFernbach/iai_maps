@@ -34,7 +34,7 @@ set(XACRO_FILES
   defs/ias_kitchen/fridge_block
   defs/ias_kitchen/table
   defs/ias_kitchen/cuboid
-  defs/ias_kitchen/shopping_block
+ # defs/ias_kitchen/shopping_block
   defs/ias_kitchen/island_block
   defs/ias_kitchen/staircase
   room/kitchen_area
@@ -43,7 +43,7 @@ set(XACRO_FILES
   room/table
   room/table_with_pillar
   room/lab_macros
-  room/shopping_area
+#  room/shopping_area
 	room/tunnel
 	room/tunnelSmall
 	room/room
@@ -65,13 +65,13 @@ SET(XACRO_SRDF_FILES
   room/srdf/floor_with_bar
   room/srdf/table
   room/srdf/table_with_pillar
-	room/srdf/test
-	room/srdf/shopping_area
+#	room/srdf/test
+#	room/srdf/shopping_area
 	room/srdf/worktables
 	room/srdf/lab_macros
-	room/srdf/bio_area
+#	room/srdf/bio_area
 	room/srdf/cnc_area
-	room/srdf/allInOne
+#	room/srdf/allInOne
 	room/srdf/tunnel
 	room/srdf/room
 	room/srdf/labyrinth
@@ -84,7 +84,7 @@ SET(XACRO_SRDF_FILES
   room/srdf/funnel
   room/srdf/powerplant
   room/srdf/powerplant_notop
-    room/buildings
+    room/srdf/buildings
   )
 
 foreach(it ${XACRO_FILES})
@@ -103,19 +103,19 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/floor_with_bar.urdf
   ${CMAKE_BINARY_DIR}/room/table.urdf
   ${CMAKE_BINARY_DIR}/room/table_with_pillar.urdf
-	${CMAKE_BINARY_DIR}/room/test.urdf
-	${CMAKE_BINARY_DIR}/room/shopping_area.urdf
-	${CMAKE_BINARY_DIR}/room/worktables.urdf
+#	${CMAKE_BINARY_DIR}/room/test.urdf
+#	${CMAKE_BINARY_DIR}/room/shopping_area.urdf
+#	${CMAKE_BINARY_DIR}/room/worktables.urdf
 	${CMAKE_BINARY_DIR}/room/lab_macros.urdf
-	${CMAKE_BINARY_DIR}/room/bio_area.urdf
-	${CMAKE_BINARY_DIR}/room/cnc_area.urdf
-	${CMAKE_BINARY_DIR}/room/allInOne.urdf
+#	${CMAKE_BINARY_DIR}/room/bio_area.urdf
+#	${CMAKE_BINARY_DIR}/room/cnc_area.urdf
+#	${CMAKE_BINARY_DIR}/room/allInOne.urdf
 	${CMAKE_BINARY_DIR}/room/tunnelSmall.urdf
 	${CMAKE_BINARY_DIR}/room/tunnel.urdf
 	${CMAKE_BINARY_DIR}/room/room.urdf
 	${CMAKE_BINARY_DIR}/room/labyrinth.urdf
 	${CMAKE_BINARY_DIR}/room/labyrinth2.urdf
-	${CMAKE_BINARY_DIR}/room/backward_easy.urdf
+#	${CMAKE_BINARY_DIR}/room/backward_easy.urdf
 	${CMAKE_BINARY_DIR}/room/grid.urdf
 	${CMAKE_BINARY_DIR}/room/hole.urdf
 	${CMAKE_BINARY_DIR}/room/crack.urdf
@@ -130,19 +130,19 @@ INSTALL(FILES
 
 INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/staircase.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/test.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/shopping_area.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/test.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/shopping_area.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/worktables.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/lab_macros.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/bio_area.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/cnc_area.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/allInOne.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/bio_area.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/cnc_area.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/allInOne.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/tunnel.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/tunnelSmall.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/room.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/labyrinth.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/labyrinth2.srdf
-	${CMAKE_BINARY_DIR}/room/srdf/backward_easy.srdf
+#	${CMAKE_BINARY_DIR}/room/srdf/backward_easy.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/grid.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/hole.srdf
 	${CMAKE_BINARY_DIR}/room/srdf/crack.srdf

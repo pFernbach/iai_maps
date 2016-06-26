@@ -3,10 +3,7 @@
   
   <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>  
   <xacro:include filename="@CMAKE_BINARY_DIR@/room/lab_macros.xacro"/>
-  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/glasses.xacro"/>
 
-  
-<!--  <glasses name="glasses2" parent="room" xyz="-1.1 4.3 0.73" rpy="0 0 0"/>-->
 
 <link name="hole_link">
   <visual>
