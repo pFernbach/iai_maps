@@ -3,7 +3,7 @@
   
   <xacro:include filename="@CMAKE_BINARY_DIR@/defs/util_defs.xacro"/>  
   <xacro:include filename="@CMAKE_BINARY_DIR@/room/lab_macros.xacro"/>
-  <xacro:include filename="@CMAKE_BINARY_DIR@/Media/models/glasses.xacro"/>
+
 
 <link name="building_link">
   <visual>
