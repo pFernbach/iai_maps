@@ -42,6 +42,9 @@ set(XACRO_FILES
   room/floor_with_bar
   room/table
   room/table_with_pillar
+  room/lab_macros
+  room/maze
+  room/maze2
   )
 
 SET(XACRO_SRDF_FILES
@@ -50,6 +53,8 @@ SET(XACRO_SRDF_FILES
   room/srdf/floor_with_bar
   room/srdf/table
   room/srdf/table_with_pillar
+  room/srdf/maze
+  room/srdf/maze2
   )
 
 foreach(it ${XACRO_FILES})
@@ -68,6 +73,8 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/floor_with_bar.urdf
   ${CMAKE_BINARY_DIR}/room/table.urdf
   ${CMAKE_BINARY_DIR}/room/table_with_pillar.urdf
+  ${CMAKE_BINARY_DIR}/room/maze.urdf
+  ${CMAKE_BINARY_DIR}/room/maze2.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 
@@ -77,6 +84,8 @@ INSTALL(FILES
   ${CMAKE_BINARY_DIR}/room/srdf/floor_with_bar.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/table.srdf
   ${CMAKE_BINARY_DIR}/room/srdf/table_with_pillar.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/maze.srdf
+  ${CMAKE_BINARY_DIR}/room/srdf/maze2.srdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/srdf
   )
 
